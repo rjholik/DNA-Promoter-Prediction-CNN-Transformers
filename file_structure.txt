@@ -1,0 +1,39 @@
+dna-promoter-prediction/
+│
+├── data/
+│   ├── raw/
+│   │   ├── genome/
+│   │   │   ├── Homo_sapiens.GRCh38.dna.chromosome.1.fa.gz
+│   │   │   └── chr1.fa
+│   │   └── uci_promoter/
+│   │       └── molecular+biology+promoter+gene+sequences/
+│   │           └── promoter.data
+│   └── processed/
+│       ├── train.csv
+│       ├── val.csv
+│       └── test.csv
+│
+├── notebooks/
+│   ├── 00_data_setup.ipynb
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_preprocessing.ipynb
+│   └── 03_model_training.ipynb
+│
+├── src/
+│   ├── dataset.py
+│   ├── encoding.py
+│   ├── model.py
+│   ├── train.py
+│   └── evaluate.py
+│
+├── models/
+│   └── best_model.pt
+│
+├── results/
+│   ├── loss_curve.png
+│   ├── accuracy_curve.png
+│   └── metrics.json
+│
+├── README.md
+├── requirements.txt
+└── .gitignore
