@@ -1,26 +1,49 @@
 # Deep Learning Models for Promoter Prediction
 
+🚧 Work in progress — building deep learning models (CNNs and Transformers) for promoter prediction from genomic DNA sequences.
+
+---
+
 ## Overview
 
-This project explores deep learning approaches for promoter prediction from DNA sequences, with a focus on comparing convolutional neural networks (CNNs) and transformer-based models.
+This project explores deep learning approaches for promoter prediction from DNA sequences, with a focus on comparing convolutional neural networks (CNNs) and transformer-based architectures.
 
-The goal is to understand how different architectures capture sequence patterns and to evaluate their performance on genomic data.
+The goal is to understand how different models capture sequence patterns and to evaluate their performance on genomic data.
 
 ---
 
 ## Project Structure
 
-data/
-├── raw/ # original datasets (not tracked by git)
-├── processed/ # cleaned datasets
+    data/
+    ├── raw/        # original datasets (not tracked by git)
+    ├── processed/  # cleaned datasets
 
-notebooks/
-├── 00_data_setup.ipynb
-├── 01_data_exploration.ipynb
-├── 02_preprocessing.ipynb
-└── 03_model_training.ipynb
+    notebooks/
+    ├── 00_data_setup.ipynb
+    ├── 01_data_exploration.ipynb
+    ├── 02_preprocessing.ipynb
+    └── 03_model_experiments.ipynb
 
-src/ # (in progress) reusable code
+    src/            # (in progress) reusable code
+
+---
+
+## Data
+
+The datasets are not included in this repository due to their size.
+
+### Genome
+Human genome (GRCh38, chromosome 1):  
+https://ftp.ensembl.org/pub/release-110/fasta/homo_sapiens/dna/
+
+### Promoter Dataset
+UCI Molecular Biology (Promoter Gene Sequences):  
+https://archive.ics.uci.edu/
+
+After downloading, place files into:
+
+    data/raw/genome/
+    data/raw/uci_promoter/
 
 ---
 
@@ -29,24 +52,23 @@ src/ # (in progress) reusable code
 - Data pipeline setup
 - Genome loading and validation
 - Exploratory data analysis:
-  - base composition
-  - GC content
-  - k-mer frequency analysis
-
-🚧 Model development in progress
+  - Base composition
+  - GC content (~38.6%)
+  - K-mer frequency analysis
 
 ---
 
 ## Methods
 
-### Data
-- Human genome (GRCh38, chromosome 1)
-- Promoter dataset (UCI)
+### Data Processing
+- FASTA parsing
+- Filtering ambiguous bases (N)
+- Sequence sampling
 
 ### Analysis
 - Base composition
-- GC content
-- K-mer frequency
+- GC content (global and local)
+- K-mer frequency analysis
 
 ### Models (planned)
 - Convolutional Neural Networks (CNNs)
@@ -54,11 +76,9 @@ src/ # (in progress) reusable code
 
 ---
 
-## Results (so far)
+## Example Analysis
 
-- GC content ~38.6% (consistent with human genome)
-- Balanced nucleotide distribution (A≈T, C≈G)
-- Presence of genomic gaps (N regions)
+*(Add figures here later)*
 
 ---
 
@@ -66,19 +86,26 @@ src/ # (in progress) reusable code
 
 - Sequence preprocessing pipeline
 - Model implementation (CNN, Transformer)
-- Performance comparison
-- Model interpretation (saliency, attention)
+- Performance evaluation
+- Model interpretation (e.g., saliency maps, attention)
 
 ---
 
 ## Requirements
 
-```bash
-pip install numpy pandas matplotlib seaborn torch
+    pip install numpy pandas matplotlib seaborn torch
 
-Notes
-Large genome files are excluded via .gitignore
-Notebooks are organized as a step-by-step pipeline
-Author
+---
 
-Radek Holik
+## Notes
+
+- Large genome files are excluded via `.gitignore`
+- Notebooks are organized as a step-by-step pipeline
+
+---
+
+## Author
+
+Radek Holik  
+M.S. in Artificial Intelligence  
+Renal Research Institute, Fresenius Medical Care
